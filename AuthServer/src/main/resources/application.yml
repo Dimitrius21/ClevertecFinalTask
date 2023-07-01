@@ -1,0 +1,17 @@
+jwt:
+  secret: ye1gJBwM5PboWDWP9mJmoDt7xnCgyENvJ8o6pByOeXQ1ADBAYp
+  lifetime: 60m
+spring:
+  application:
+    name: auth-server
+  datasource:
+    url : jdbc:postgresql://localhost:5432/clevertec
+    username : postgres
+    password : 1234
+    driver : org.postgresql.Driver
+  jpa:
+    show-sql : true
+  liquibase:
+    enabled: true
+server:
+  port: 8090

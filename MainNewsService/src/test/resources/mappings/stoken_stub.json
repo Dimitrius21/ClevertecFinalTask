@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/auth/jwt",
+    "bodyPatterns" : [ {
+      "equalToJson" : {"username":"Sema", "password":"300"}
+    } ]
+  },
+  "response": {
+    "status": 200,
+    "body": "eyJhbGciOiJIUzI1NiJ9.eyJzY29wZSI6WyJST0xFX1NVQlNDUklCRVIiXSwiaWF0IjoxNjg3Njg1Mjk0LCJzdWIiOiJTZW1hIiwiZXhwIjoxNjkxMjg1Mjk0fQ.8QdJz9r_N6tBJxNV0Q52EK1j9NfCvIa-kTzveR4iCkM",
+    "headers": {
+      "Content-Type": "text/plain"
+    }
+  }
+}

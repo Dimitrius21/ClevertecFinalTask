@@ -1,0 +1,57 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_news
+      author: dmitri
+      changes:
+        - createTable:
+            tableName: news
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: time
+                  type: timestamp
+              - column:
+                  name: title
+                  type: VARCHAR(255)
+              - column:
+                  name: text
+                  type: text
+              - column:
+                  name: username
+                  type: VARCHAR(255)
+  - changeSet:
+      id: create_comment
+      author: dmitri
+      changes:
+        - createTable:
+            tableName: comment
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: time
+                  type: timestamp
+              - column:
+                  name: text
+                  type: text
+              - column:
+                  name: username
+                  type: VARCHAR(255)
+              - column:
+                  name: news_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: news_comment_fk
+                    referencedTableName: news
+                    referencedColumnNames: id

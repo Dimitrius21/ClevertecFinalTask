@@ -1,0 +1,9 @@
+confighost: http://localhost:8888
+active: dev
+spring:
+  config:
+     import: configserver:${confighost}
+  application:
+    name : clevertec
+  profiles:
+    active: ${active}

@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/auth/jwt",
+    "bodyPatterns" : [ {
+      "equalToJson" : {"username":"admin", "password":"100"}
+    } ]
+  },
+  "response": {
+    "status": 200,
+    "body": "eyJhbGciOiJIUzI1NiJ9.eyJzY29wZSI6WyJST0xFX0FETUlOIl0sImlhdCI6MTY4NzUxOTQ4MSwic3ViIjoiYWRtaW4iLCJleHAiOjE2OTExMTk0ODF9.OeBHx7THjO3iHg-LwaAtUcX5y-3hDr0vzuNhf-CuFkI",
+    "headers": {
+      "Content-Type": "text/plain"
+    }
+  }
+}

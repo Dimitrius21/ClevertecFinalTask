@@ -1,0 +1,64 @@
+spring:
+  datasource:
+    url : jdbc:postgresql://localhost:5432/clevertec
+    username : postgres
+    password : 1234
+    driver : org.postgresql.Driver
+  jpa:
+    show-sql : true
+  profiles:
+        active : dev
+  liquibase:
+    enabled: true
+    contexts: dev
+spring-doc:
+  packagesToScan: ru.clevertec.finalproj.controller
+jwt:
+  secret: ye1gJBwM5PboWDWP9mJmoDt7xnCgyENvJ8o6pByOeXQ1ADBAYp
+caching:
+  repository: newsRepository, commentRepository
+feign:
+  name: auth-server
+  url : http://localhost:8090
+exception:
+  custom-handler:
+    enable : true
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+#  liquibase:
+#    contexts: dev
+caching:
+  type : lru
+  size : 5
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    url: jdbc:postgresql://localhost:5432/test
+  liquibase:
+    contexts: test
+caching:
+  type : lfu
+  size : 5
+---
+
+spring:
+  config:
+    activate:
+      on-profile: redis
+  cache:
+    redis:
+      time-to-live: 300s
+  data:
+    redis:
+      host: localhost
+      port: 6379

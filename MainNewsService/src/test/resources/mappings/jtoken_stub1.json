@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/auth/jwt",
+    "bodyPatterns" : [ {
+      "equalToJson" : {"username":"Mark", "password":"200"}
+    } ]
+  },
+  "response": {
+    "status": 200,
+    "body": "eyJhbGciOiJIUzI1NiJ9.eyJzY29wZSI6WyJST0xFX0pPVVJOQUxJU1QiXSwiaWF0IjoxNjg3Njg5Mjg1LCJzdWIiOiJNYXJrIiwiZXhwIjoxNjkxMjg5Mjg1fQ.v2bnpfopme1XZBIEY7gRDrX7rG3_NFwj4Rqw6ks3vj0",
+    "headers": {
+      "Content-Type": "text/plain"
+    }
+  }
+}

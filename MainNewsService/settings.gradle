@@ -1,0 +1,4 @@
+rootProject.name = 'MainNewsService'
+include 'controller-logging-starter'
+include 'exception-handling-starter'
+
